@@ -1,2 +1,7 @@
 .idea
 .DS_Store
+.benchmarks
+.hypothesis
+.pytest_cache
+*.log
+test/__pychache__/
