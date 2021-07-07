@@ -20,4 +20,4 @@ class TestHello():
 
     def test_text_returned_from_hello_world(self, hello):
         assert hello.hello_world() == "Hello Alice!"
-        assert hello.hello_world("Count Rugen") == "Hello. My name is Inigo Montoya. You killed my father. Prepare to die."
+        assert hello.hello_world(name="Count Rugen") == "Hello. My name is Inigo Montoya. You killed my father. Prepare to die."
