@@ -5,3 +5,4 @@
 .pytest_cache
 *.log
 test/__pychache__/
+__pycache__
