@@ -1,5 +1,5 @@
 import pytest
-from assembly.lang_9 import ContractRef
+from assembly_client.api.contracts import ContractRef
 
 @pytest.mark.usefixtures('network')
 class TestHello():

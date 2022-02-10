@@ -6,3 +6,5 @@
 *.log
 test/__pychache__/
 __pycache__
+
+launch.json
