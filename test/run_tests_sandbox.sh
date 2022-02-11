@@ -18,6 +18,6 @@ sym network publish-contract -d ../
 
 pip3 install --upgrade pip
 pip3 install symbiont-io.assembly-client
-pip install symbiont-io.pytest-assembly==2.0.4.dev0
+pip3 install symbiont-io.pytest-assembly==2.0.4.dev0
 
 pytest .  --connection-file "$DEFAULT_NETWORK_CONFIG" --contract-path ../
