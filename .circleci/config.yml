@@ -1,4 +1,6 @@
-version: 2
+version: 2.1
+orbs: 
+  assembly-sdk: symbiont-io/assembly-sdk@1.0.0
 jobs:
   test-sandbox:
     docker:
@@ -10,30 +12,17 @@ jobs:
       - attach_workspace:
           at: /tmp/workspace
       - checkout
-      - run:
-          name: Environment setup
-          command: |
-            git config --global --add url.git@github.com:.insteadof https://github.com/
-            sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-            wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-
-            sudo apt-get update
-            sudo apt-get install --assume-yes postgresql libpq-dev jq curl software-properties-common
-            sudo add-apt-repository ppa:deadsnakes/ppa --yes
-            sudo apt-get install --assume-yes python3.9-dev python3-pip
+      - assembly-sdk/install_sdk:
+          sdk_version: next
+          symenvrc: CI_SYMENVRC
       - run:
           name: pytest tests
           command: |
             cd test/
             chmod u+x *.sh
-            echo "Setting up environment"
-            ./setup_environment.sh
-            echo "Environment setup"
             echo "Running tests- sandbox"
             ./run_tests_sandbox.sh
             echo "Tests run"
-      - store_artifacts:
-          path: ~/.symbiont/assembly-dev/mock-network
   test-local-network:
     docker:
       - image: cimg/base:2021.04
