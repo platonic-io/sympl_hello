@@ -2,27 +2,6 @@ version: 2.1
 orbs: 
   assembly-sdk: symbiont-io/assembly-sdk@1.0.0
 jobs:
-  test-sandbox:
-    docker:
-      - image: cimg/base:2021.04
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "5e:e5:76:27:9b:39:51:8b:ca:bf:46:34:30:e9:11:76"
-      - attach_workspace:
-          at: /tmp/workspace
-      - checkout
-      - assembly-sdk/install_sdk:
-          sdk_version: next
-          symenvrc: CI_SYMENVRC
-      - run:
-          name: pytest tests
-          command: |
-            cd test/
-            chmod u+x *.sh
-            echo "Running tests- sandbox"
-            ./run_tests_sandbox.sh
-            echo "Tests run"
   test-local-network:
     docker:
       - image: cimg/base:2021.04
@@ -62,7 +41,5 @@ workflows:
   version: 2
   validate_pr:
     jobs:
-      - test-sandbox:
-          context: org-global
       - test-local-network:
           context: org-global
