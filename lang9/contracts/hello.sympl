@@ -1,0 +1,6 @@
+@clientside
+def hello_world(name: str='Alice') -> str:
+    message = f'Hello {name}!'
+    if name == "Count Rugen":
+        message = "Hello. My name is Inigo Montoya. You killed my father. Prepare to die."
+    return message
