@@ -1,13 +1,7 @@
 import prelude version 1.0.0 as prelude
 import std version 1.0.0 as std
-import cvm_base version 1.0.0 as cvm_base
-import cvm_executable version 1.0.0 as cvm_executable
 import cvm_clientside version 1.0.0 as cvm_clientside
-import unqualified globals version 1.0.0
 
 @clientside
-def hello_world(name: str='Alice') -> str:
-    message = f'Hello {name}!'
-    if name == "Count Rugen":
-        message = "Hello. My name is Inigo Montoya. You killed my father. Prepare to die."
-    return message
+def hello_world() -> str:
+    return "Hello world!"
