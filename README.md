@@ -1,7 +1,7 @@
 # Hello world smart contract
 
-<a href="https://portal.symbiont.io/sdk_docs/docs/intro"><img src="https://img.shields.io/badge/Assembly-5.0.0-orange"/></a>
-<a href="https://portal.symbiont.io/sdk_docs/docs/intro"><img src="https://img.shields.io/badge/Assembly%20SDK-3.0.0-blue"/></a>
+<a href="https://portal.symbiont.io/sdk_docs/docs/intro"><img src="https://img.shields.io/badge/Assembly-6.0.0-orange"/></a>
+<a href="https://portal.symbiont.io/sdk_docs/docs/intro"><img src="https://img.shields.io/badge/Assembly%20SDK-4.0.0-blue"/></a>
 
 ## Introduction
 
@@ -23,13 +23,15 @@ and provide feedback/merge it.
 ## Running tests
 
 Requirements:
+
 - Install the [pytest plugin](https://portal.symbiont.io/new_docs/sdk/testing/install-pytest)
 - Have a mock-network running (we recommend using `sym` to get a mock network up and running quickly)
 
-Steps: 
+Steps:
+
 - Change directory to the root of this repository
 - Run the following command:
+
 ```shell
 pytest test/hello_test.py --network-config=~/.symbiont/assembly-dev/mock-network/default/network-config.json --contract-path=./
 ```
-
