@@ -2,6 +2,7 @@ import prelude version 1.0.0 as prelude
 import std version 1.0.0 as std
 import cvm_clientside version 1.0.0 as cvm_clientside
 
+# Our first contract! Says "hello" to the world.
 @clientside
 def hello_world() -> str:
     return "Hello world!"
