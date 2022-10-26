@@ -1,0 +1,15 @@
+import prelude version 1.0.0 as prelude
+import std version 1.0.0 as std
+import cvm_clientside version 1.0.0 as cvm_clientside
+
+# Additional imports
+import unqualified globals version 1.0.0
+import cvm_executable version 1.0.0 as cvm_executable
+
+# Our first contract, modified again to show off a few more features.
+@clientside
+def hello_world(name: str='Alice') -> str:
+    message = f'Hello {name}!'
+    if name == "Count Rugen":
+        message = "Hello. My name is Inigo Montoya. You killed my father. Prepare to die."
+    return message
